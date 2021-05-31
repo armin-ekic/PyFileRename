@@ -1,0 +1,5 @@
+-------------External Dependancies---------------------
+
+-Selected files for renaming
+-Naming convention
+-more to be added...
