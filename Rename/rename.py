@@ -22,7 +22,7 @@ class Renamer(QObject):
     #will emit whenever a file is renamed, used to update the list of renamed files in the GUI
     renamedFile = pyqtSignal(Path)
     #emits whenever the file renaming process is complete
-    finished = pyqtSignal
+    finished = pyqtSignal()
 
     #files holds the selected list of files, and prefix is the entered prefix for the renaming process
     def __init__(self, files, prefix):

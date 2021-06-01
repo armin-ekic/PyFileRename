@@ -105,14 +105,14 @@ class Window(QWidget, Ui_Window):
         #create a new QThread to offload the file renaming process
         self._thread = QThread()
         #instantiate Renamer passing the list of files and the desired prefix to the constructor
-        self._renamer = Renamer(files = tuple(self._files), prefix = prefix,)
+        self._renamer = Renamer(files = tuple(self._files), prefix = prefix)
         #move the given object to a different thread of execution using ._thread as the target thread
         self._renamer.moveToThread(self._thread)
         #rename the files, connect .started() with .renameFiles() on the Renamer instance, start renaming when the
         #thread starts
         self._thread.started.connect(self._renamer.renameFiles)
         #update the state, connect .renamedFile() with ._updateStateWhenFileRenamed()
-        self._renamer.renamedFile.connect(self._updateSttateWhenFileRenamed)
+        self._renamer.renamedFile.connect(self._updateStateWhenFileRenamed)
         #clean up the threads by getting rid of the extras
         #connect Renamers .finished() with the thread's .quit() slot to quit when renaming is finished
         self._renamer.finished.connect(self._thread.quit)
