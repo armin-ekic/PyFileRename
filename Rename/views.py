@@ -23,16 +23,7 @@ from PyQt5.QtWidgets import QFileDialog, QWidget
 from .ui.window import Ui_Window
 
 #this constant specifies file filters as a string, allowing selection of different file types
-FILTERS = ";;".join(
-    (
-        "PNG Files (*.png)",
-        "JPEG Files (*.jpeg)",
-        "JPG Files (*.jpg)",
-        "GIF Files (*.gif)",
-        "Text Files (*.txt)",
-        "Python Files (*.py)",
-    )
-)
+FILTERS = "Desired(*.png *.jpg *.jpeg *.gif *.txt)"
 
 
 #used to initialize/setup the window, multiple inheritance of QWidget and UI_Window, allowing us to access methods
